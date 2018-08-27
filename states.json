@@ -1,0 +1,252 @@
+[
+  {
+    "name": "Alabama",
+    "population": 4874747,
+    "capital": "Birmingham"
+  },
+  {
+    "name": "Alaska",
+    "population": 739795,
+    "capital": "Juneau"
+  },
+  {
+    "name": "Arizona",
+    "population": 7016270,
+    "capital": "Phoenix"
+  },
+  {
+    "name": "Arkansas",
+    "population": 3004279,
+    "capital": "Little Rock"
+  },
+  {
+    "name": "California",
+    "population": 39536653,
+    "capital": "Sacramento"
+  },
+  {
+    "name": "Colorado",
+    "population": 5607154,
+    "capital": "Denver"
+  },
+  {
+    "name": "Connecticut",
+    "population": 3588184,
+    "capital": "Hartford"
+  },
+  {
+    "name": "Deleware",
+    "population": 961939,
+    "capital": "Dover"
+  },
+  {
+    "name": "Florida",
+    "population": 20984400,
+    "capital": "Talahassee"
+  },
+  {
+    "name": "Georgia",
+    "population": 10429379,
+    "capital": "Atlanta"
+  },
+  {
+    "name": "Hawaii",
+    "population": 1427538,
+    "capital": "Honolulu"
+  },
+  {
+    "name": "Idaho",
+    "population": 1716943,
+    "capital": "Boise"
+  },
+  {
+    "name": "Illinois",
+    "population": 12802023,
+    "capital": "Springfield"
+  },
+  {
+    "name": "Indiana",
+    "population": 6666818,
+    "capital": "Indianapolis"
+  },
+  {
+    "name": "Iowa",
+    "population": 3145711,
+    "capital": "Des Moines"
+  },
+  {
+    "name": "Kansas",
+    "population": 2913123,
+    "capital": "Topeka"
+  },
+  {
+    "name": "Kentucky",
+    "population": 4454189,
+    "capital": "Frankfort"
+  },
+  {
+    "name": "Louisana",
+    "population": 4684333,
+    "capital": "Baton Rouge"
+  },
+  {
+    "name": "Maine",
+    "population": 1335907,
+    "capital": "Augusta"
+  },
+  {
+    "name": "Maryland",
+    "population": 6052177,
+    "capital": "Annapolis"
+  },
+  {
+    "name": "Massachusetts",
+    "population": 6859819,
+    "capital": "Boston"
+  },
+  {
+    "name": "Michigan",
+    "population": 9962311,
+    "capital": "Lansing"
+  },
+  {
+    "name": "Minnesota",
+    "population": 5576606,
+    "capital": "St. Paul"
+  },
+  {
+    "name": "Mississippi",
+    "population": 2984100,
+    "capital": "Jackson"
+  },
+  {
+    "name": "Missouri",
+    "population": 6113532,
+    "capital": "Jefferson City"
+  },
+  {
+    "name": "Montana",
+    "population": 1050493,
+    "capital": "Helena"
+  },
+  {
+    "name": "Nebraska",
+    "population": 1920076,
+    "capital": "Lincoln"
+  },
+  {
+    "name": "Nevada",
+    "population": 2998036,
+    "capital": "Carson City"
+  },
+  {
+    "name": "New Hampshire",
+    "population": 1342795,
+    "capital": "Concord"
+  },
+  {
+    "name": "New Jersey",
+    "population": 9005644,
+    "capital": "Trenton"
+  },
+   {
+    "name": "New Mexico",
+    "population": 2088070,
+    "capital": "Santa Fe"
+  },
+  {
+    "name": "New York",
+    "population": 19849399,
+    "capital": "Albany"
+  },
+  {
+    "name": "North Carolina",
+    "population": 10273419,
+    "capital": "Raleigh"
+  },
+   {
+    "name": "North Dakota",
+    "population": 755393,
+    "capital": "Bismarck"
+  },
+   {
+    "name": "Ohio",
+    "population": 11658609,
+    "capital": "Columbus"
+  },
+   {
+    "name": "Oklahoma",
+    "population": 3930864,
+    "capital": "Oklahoma City"
+  },
+   {
+    "name": "Oregon",
+    "population": 4142776,
+    "capital": "Salem"
+  },
+   {
+    "name": "Pennsylvania",
+    "population": 12805537,
+    "capital": "Harrisburg"
+  },
+   {
+    "name": "Rhode Island",
+    "population": 1059639,
+    "capital": "Providence"
+  },
+   {
+    "name": "South Carolina",
+    "population": 5024369,
+    "capital": "Columbia"
+  },
+   {
+    "name": "South Dakota",
+    "population": 869666,
+    "capital": "Pierre"
+  },
+   {
+    "name": "Tennessee",
+    "population": 7016270,
+    "capital": "Nashville"
+  },
+   {
+    "name": "Texas",
+    "population": 28304596,
+    "capital": "Austin"
+  },
+   {
+    "name": "Utah",
+    "population": 3101833,
+    "capital": "Salt Lake City"
+  },
+   {
+    "name": "Vermont",
+    "population": 623657,
+    "capital": "Montpelier"
+  },
+   {
+    "name": "Virginia",
+    "population": 8470020,
+    "capital": "Richmond"
+  },
+   {
+    "name": "Washington",
+    "population": 7405743,
+    "capital": "Olympia"
+  },
+   {
+    "name": "West Virgina",
+    "population": 1815817,
+    "capital": "Charleston"
+  },
+   {
+    "name": "Wisconsin",
+    "population": 5795483,
+    "capital": "Madison"
+  },
+   {
+    "name": "Wyoming",
+    "population": 579315,
+    "capital": "Cheyenne"
+  }
+]
