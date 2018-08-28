@@ -1,400 +1,502 @@
 [
-  {"name": "Richard C. Shelby", 
-    "party": "R"
+  {
+    "name": "Doug Jones",
+    "party": "D",
+    "state":"Alabama"
   },
  {
    "name": "Richard C. Shelby",
-   "party": "R"
+   "party": "R",
+   "state": "Alabama"
  },
  {"name": "Lisa Murkowski",
-  "party": "R"
+  "party": "R",
+  "state":"Alaska"
 },
 {
   "name": "Daniel Sullivan",
-  "party": "R"
+  "party": "R",
+  "state": "Alaska"
 },
 {
   "name": "John McCain",
-  "party": "R"
+  "party": "R",
+  "state":"Arizona"
 },
 {
   "name": "Jeff Flake",
-  "party": "R"
+  "party": "R",
+  "state": "Arizona"
 },
 {
   "name": "John Boozman",
-  "party": "R"
+  "party": "R",
+  "state":"Arkansas"
 },
 {
   "name":"Tom Cottom" ,
-  "party":"R"
+  "party":"R",
+  "state": "Arkansas"
 },
 {
   "name": "Dianne Feinstein",
-  "party": "D"
+  "party": "D",
+  "state":"California"
 },
 {
   "name": "Kamala D Harris" ,
-  "party":"D"
+  "party":"D",
+  "state": "California"
 },
 {
   "name": "Michael F Bennet",
-  "party": "D"
+  "party": "D",
+  "state":"Colorado"
 },
 {
   "name":"Cory Gardner" ,
-  "party": "R"
+  "party": "R",
+  "state": "Colorado"
 },
 {
   "name": "Richard Blumenthal",
-  "party":"D"
+  "party":"D",
+  "state":"Connecticut"
 },
 {
   "name":"Christopher Murphy" ,
-  "party":"D"
+  "party":"D",
+  "state": "Connecticut"
 },
 {
   "name": "Thomas R. Carper",
-  "party":"D"
+  "party":"D",
+  "state":"Delaware"
 },
 {
   "name":"Christopher A Coons" ,
-  "party":"D"
+  "party":"D",
+  "state": "Delaware"
 },
 {
   "name": "Bill Nelson",
-  "party":"D"
+  "party":"D",
+  "state":"Florida"
 },
 {
   "name":"Marco Rubio" ,
-  "party":"R"
+  "party":"R",
+  "state": "Florida"
 },
 {
   "name":"Johnny Isakson" ,
-  "party":"R"
+  "party":"R",
+  "state":"Georgia"
 },
 {
   "name":"David Perdue" ,
-  "party":"R"
+  "party":"R",
+  "state": "Georgia"
 },
 {
   "name": "Brian Schatz",
-  "party":"D"
+  "party":"D",
+  "state":"Hawaii"
 },
 {
   "name":"Mazie K Hirono" ,
-  "party":"D"
+  "party":"D",
+  "state": "Hawaii"
 },
 {
   "name": "Mike Crapo",
-  "party":"R"
+  "party":"R",
+  "state":"Idaho"
 },
 {
   "name": "Jame E Risch",
-  "party":"R"
+  "party":"R",
+  "state": "Idaho"
 },
 {
   "name": "Richard J Durbin",
-  "party":"D"
+  "party":"D",
+  "state":"Illinois"
 },
 {
   "name":"Tammy Duckworth" ,
-  "party":"D"
+  "party":"D",
+  "state": "Illinois"
 },
 {
   "name": "John Donnelly",
-  "party":"D"
+  "party":"D",
+  "state":"Indiana"
 },
 {
   "name":"Todd Young" ,
-  "party":"R"
+  "party":"R",
+  "state": "Indiana"
 },
 {
   "name":"Chuck Grassley" ,
-  "party":"R"
+  "party":"R",
+  "state":"Iowa"
 },
 {
   "name":"Joni Ernst" ,
-  "party":"R"
+  "party":"R",
+  "state": "Iowa"
 },
 {
   "name": "Pat Roberts",
-  "party":"R"
+  "party":"R",
+  "state":"Kansas"
 },
 {
   "name": "Jerry Moran",
-  "party":"R"
+  "party":"R",
+  "state": "Kansas"
 },
 {
   "name": "Mitch McConnell",
-  "party":"R"
+  "party":"R",
+  "state":"Kentucky"
 },
 {
   "name":"Rand Paul" ,
-  "party":"R"
+  "party":"R",
+  "state": "Kentucky"
 },
 {
   "name": "Bill Cassidy",
-  "party":"R"
+  "party":"R",
+  "state":"Louisiana"
 },
 {
   "name": "John Kennedy",
-  "party":"R"
+  "party":"R",
+  "state": "Louisiana"
 },
 {
   "name":"Susan M Collins" ,
-  "party":"R"
+  "party":"R",
+  "state":"Maine"
 },
 {
   "name": "Angus S King Jr",
-  "party":"I"
+  "party":"I",
+  "state": "Maine"
 },
 {
   "name": "Benjamin Cardin",
-  "party":"D"
+  "party":"D",
+  "state":"Maryland"
 },
 {
   "name": "Chris Van Hollen",
-  "party":"D"
+  "party":"D",
+  "state": "Maryland"
 },
 {
   "name":"Elizabeth Warren",
-  "party":"D"
+  "party":"D",
+  "state":"Massachusetts"
 },
 {
   "name": "Edward J Markey",
-  "party":"D"
+  "party":"D",
+  "state": "Massachusetts"
 },
 {
   "name":"Debbie Stabenow" ,
-  "party":"D"
+  "party":"D",
+  "state":"Michigan"
 },
 {
   "name":"Gary C Peters" ,
-  "party":"D"
+  "party":"D",
+  "state": "Michigan"
 },
 {
   "name": "Amy Klobuchar",
-  "party":"D"
+  "party":"D",
+  "state":"Minnesota"
 },
 {
   "name": "Tina Smith",
-  "party":"D"
+  "party":"D",
+  "state": "Minnesota"
 },
 {
   "name": "Roger F Wicker",
-  "party":"R"
+  "party":"R",
+  "state":"Mississippi"
 },
 {
   "name":"Cindy Hyde Smith" ,
-  "party":"R"
+  "party":"R",
+  "state": "Mississippi"
 },
 {
   "name": "Claire McCaskill",
-  "party":"D"
+  "party":"D",
+  "state":"Missouri"
 },
 {
   "name":"Roy Blunt" ,
-  "party":"R"
+  "party":"R",
+  "state": "Missouri"
 },
 {
   "name": "John Tester",
-  "party":"D"
+  "party":"D",
+  "state":"Montana"
 },
 {
   "name":"Steve Daines" ,
-  "party":"R"
+  "party":"R",
+  "state": "Montana"
 },
 {
   "name":"Deb Fischer",
-  "party":"R"
+  "party":"R",
+  "state":"Nebraska"
 },
 {
   "name":"Ben Sasse" ,
-  "party":"R"
+  "party":"R",
+  "state": "Nebraska"
 },
 {
   "name": "Dean Heller",
-  "party":"R"
+  "party":"R",
+  "state":"Nevada"
 },
 {
   "name": "Catherine Cortez Masto",
-  "party":"D"
+  "party":"D",
+  "state": "Nevada"
 },
 {
   "name": "Jeanne Shaheen",
-  "party":"D"
+  "party":"D",
+  "state":"New Hampshire"
 },
 {
   "name": "Margaret Wood Hassan",
-  "party":"D"
+  "party":"D",
+  "state": "New Hampshire"
 },
 {
   "name":"Robert Menendez" ,
-  "party":"D"
+  "party":"D",
+  "state":"New Jersey"
 },
 {
   "name":"Corey A Booker" ,
-  "party":"D"
+  "party":"D",
+  "state": "New Jersey"
 },
 {
   "name": "Tom Udall",
-  "party":"D"
+  "party":"D",
+  "state":"New Mexico"
 },
 {
   "name": "Martin Heinrich",
-  "party":"D"
+  "party":"D",
+  "state": "New Mexico"
 },
 {
   "name": "Charles E Schumer",
-  "party":"D"
+  "party":"D",
+  "state":"New York"
 },
 {
   "name":"Kirsten E Gillibrand" ,
-  "party":"D"
+  "party":"D",
+  "state": "New York"
 },
 {
   "name": "Richard Burr",
-  "party":"R"
+  "party":"R",
+  "state":"North Carolina"
 },
 {
   "name": "Thom Tillis",
-  "party":"R"
+  "party":"R",
+  "state": "North Carolina"
 },
 {
   "name": "John Hoeven" ,
-  "party":"R"
+  "party":"R",
+  "state":"North Dakota"
 },
 {
   "name": "Heidi Heitkamp",
-  "party":"D"
+  "party":"D",
+  "state": "North Dakota"
 },
 {
   "name": "Sherrod Brown",
-  "party":"D"
+  "party":"D",
+  "state":"Ohio"
 },
 {
   "name": "Rob Portman",
-  "party": "R"
+  "party": "R",
+  "state": "Ohio"
 },
 {
   "name": "James M Inhofe",
-  "party": "R"
+  "party": "R",
+  "state":"Oklahoma"
 },
 {
   "name": "James Lankford",
-  "party": "R"
+  "party": "R",
+  "state": "Oklahoma"
 },
 {
   "name": "Ron Wyden",
-  "party": "D"
+  "party": "D",
+  "state":"Oregon"
 },
 {
   "name": "Jeff Merkley",
-  "party": "D"
+  "party": "D",
+  "state": "Oregon"
+
 },
 {
   "name": "Robert P Casey",
-  "party": "D"
+  "party": "D",
+  "state":"Pennsylvania"
 },
 {
   "name": "Patrick Toomey",
-  "party": "R"
+  "party": "R",
+  "state": "Pennsylvania"
 },
 {
   "name": "Jack Reed",
-  "party": "D"
+  "party": "D",
+  "state":"Rhode Island"
 },
 {
   "name": "Sheldon Whitehouse",
-  "party": "D"
+  "party": "D",
+  "state": "Rhode Island"
 },
 {
   "name": "Lindsey Graham",
-  "party": "R"
+  "party": "R",
+  "state":"South Carolina"
 },
 {
   "name": "Tim Scott",
-  "party": "R"
+  "party": "R",
+  "state": "South Carolina"
 },
 {
   "name": "John Thune",
-  "party": "R"
+  "party": "R",
+  "state":"South Dakota"
 },
 {
   "name": "Mike Rounds",
-  "party": "R"
+  "party": "R",
+   "state": "South Dakota"
 },
 {
   "name": "Lamar Alexander",
-  "party": "R"
+  "party": "R",
+  "state":"Tennessee"
 },
 {
   "name": "Bob Corker",
-  "party": "R"
+  "party": "R",
+   "state": "Tennessee"
 },
 {
   "name": "John Cornyn",
-  "party": "R"
+  "party": "R",
+  "state":"Texas"
 },
 {
   "name": "Ted Cruz",
-  "party": "R"
+  "party": "R",
+   "state": "Texas"
 },
 {
   "name": "Orrin G Hatch",
-  "party": "R"
+  "party": "R",
+  "state":"Utah"
 },
 {
   "name": "Mike Lee",
-  "party": "Rf"
+  "party": "R",
+  "state": "Utah"
 },
 {
   "name": "Patrick J Leahy",
-  "party": "D"
+  "party": "D",
+  "state":"Vermont"
 },
 {
   "name": "Bernie Sanders",
-  "party": "I"
+  "party": "I",
+  "state": "Virginia"
 },
 {
   "name": "Mark R Warner",
-  "party": "D"
+  "party": "D",
+  "state":"Virginia"
 },
 {
   "name": "Tim Kaine",
-  "party": "D"
+  "party": "D",
+  "state": "Virginia"
 },
 {
   "name": "Patty Murray",
-  "party": "D"
+  "party": "D",
+  "state":"Washington"
 },
 {
   "name": "Maria Cantwell",
-  "party": "D"
+  "party": "D",
+  "state": "Washington"
 },
 {
   "name": "Joe Manchin III",
-  "party": "D"
+  "party": "D",
+  "state":"West Virginia"
 },
 {
   "name": "Shelley Moore Capito",
-  "party": "R"
+  "party": "R",
+  "state": "West Virginia"
 },
 {
   "name": "Ron Johnson",
-  "party": "R"
+  "party": "R",
+  "state":"Wisconsin"
 },
 {
   "name": "Tammy Baldwin",
-  "party": "D"
+  "party": "D",
+   "state": "Wisconsin"
 },
 {
   "name": "Michael Enzi",
-  "party": "R"
+  "party": "R",
+  "state":"Wyoming"
 },
 {
   "name": "John Barrasso",
-  "party": "R"
+  "party": "R",
+  "state": "Wyoming"
 }
 ]
