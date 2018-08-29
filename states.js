@@ -1,4 +1,4 @@
-const stateData = [
+let stateData = [
   {
     "name": "Alabama",
     "population": 4874747,
@@ -751,4 +751,4 @@ const stateData = [
   }
 ]
 
-module.exports = stateData
+module.exports = stateData;
