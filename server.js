@@ -17,6 +17,16 @@ app.get('/api/v1/senators', (request, response) => {
     })
 })
 
+app.get('/api/v1/states', (request, response)=>{
+  database('states').select()
+  .then((states)=>{
+    response.status(200).json(states)
+  })
+  .catch((err)=>{
+    response.status(500).json({err})
+  })
+})
+
 
 
 
