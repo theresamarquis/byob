@@ -5,7 +5,7 @@ const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.set('port', process.env.PORT || 3000)
@@ -61,7 +61,7 @@ app.get('/api/v1/states/:id', (request, response) => {
 
 app.post('/api/v1/states', (request, response) => {
   const state = request.body;
-  
+
   for (let requiredParameter of ['state_name', 'capital', 'population']) {
     if (!state[requiredParameter]) {
       return response.status(422).send({
@@ -71,10 +71,10 @@ app.post('/api/v1/states', (request, response) => {
   }
   database('states').insert(state, 'id')
     .then(state => {
-      response.status(201).json({id: state[0]})
+      response.status(201).json({ id: state[0] })
     })
     .catch(err => {
-      response.status(500).json({err})
+      response.status(500).json({ err })
     })
 })
 
@@ -89,11 +89,11 @@ app.post('/api/v1/senators', (request, response) => {
   }
   database('senators').insert(senator, 'id')
     .then(senator => {
-      response.status(201).json({id: senator[0]})
+      response.status(201).json({ id: senator[0] })
     })
     .catch(err => {
-      response.status(500).json({err})
-  })
+      response.status(500).json({ err })
+    })
 })
 
 app.patch('/api/v1/states/:id', (request, response) => {
@@ -101,37 +101,59 @@ app.patch('/api/v1/states/:id', (request, response) => {
   const updates = request.body;
 
   if (updates.hasOwnProperty('id')) {
-    return response.status(422).json({error: 'You cannot update the id field'})
+    return response.status(422).json({ error: 'You cannot update the id field.' })
   }
   database('states').where('id', id).update(request.body)
     .then(state => {
       return response.status(201).json(updates)
     })
     .catch(err => {
-      response.status(500).json({err})
-   })
+      response.status(500).json({ err })
+    })
 })
 
 app.patch('/api/v1/senators/:id', (request, response) => {
+  const id = request.params.id;
+  const updates = request.body;
 
+  if (updates.hasOwnProperty('id')) {
+    return response.status(422).json({ error: 'You cannot update the id field.' })
+  }
+  database('senators').where('id', id).update(request.body)
+    .then(senator => {
+      return response.status(201).json(updates)
+    })
+    .catch(err => {
+      response.status(500).json({ err })
+    })
 })
 
 app.delete('/api/v1/states/:id', (request, response) => {
   database('states').where('id', request.params.id).del()
     .then(state => {
-      if(state.length) {
-        return response.status(404).json({ error: `Could not find a state with id ${request.params.id}.`})
+      if (state.length) {
+        return response.status(404).json({ error: `Could not find a state with id ${request.params.id}.` })
       } else {
         return response.status(201).json("You deleted a state!!!")
       }
     })
     .catch(err => {
-      response.status(500).json({err})
+      response.status(500).json({ err })
     })
 })
 
 app.delete('/api/v1/senators/:id', (request, response) => {
-
+  database('senators').where('id', request.params.id).del()
+    .then(senator => {
+      if (senator.length) {
+        return response.status(404).json({ error: `Could not find a senator with id ${request.params.id}.` })
+      } else {
+        return response.status(201).json("You deleted a senator!!")
+      }
+    })
+    .catch(err => {
+      response.status(500).json({ err })
+    })
 })
 
 
