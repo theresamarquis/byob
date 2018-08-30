@@ -61,7 +61,6 @@ app.get('/api/v1/states/:id', (request, response) => {
 
 app.post('/api/v1/states', (request, response) => {
   const state = request.body;
-  console.log(request.body);
   
   for (let requiredParameter of ['state_name', 'capital', 'population']) {
     if (!state[requiredParameter]) {
@@ -77,6 +76,24 @@ app.post('/api/v1/states', (request, response) => {
     .catch(err=>{
       response.status(500).json({err})
     })
+})
+
+app.post('/api/v1/senators', (request, response)=>{
+  const senator = request.body;
+  for (let requiredParameter of ['senator_name', 'party', 'state_id']) {
+    if (!senator[requiredParameter]) {
+      return response.status(422).send({
+        error: `Expected format: {senator_name: <STRING>, party: <STRING>, state_id: <NUMBER>}. You are missing a '${requiredParameter}' property.`
+      });
+    }
+  }
+  database('senators').insert(senator, 'id')
+  .then(senator=>{
+    response.status(201).json({id: senator[0]})
+  })
+  .catch(err=>{
+    response.status(500).json({err})
+  })
 })
 
 
