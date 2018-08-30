@@ -70,15 +70,15 @@ app.post('/api/v1/states', (request, response) => {
     }
   }
   database('states').insert(state, 'id')
-    .then(state =>{
+    .then(state => {
       response.status(201).json({id: state[0]})
     })
-    .catch(err=>{
+    .catch(err => {
       response.status(500).json({err})
     })
 })
 
-app.post('/api/v1/senators', (request, response)=>{
+app.post('/api/v1/senators', (request, response) => {
   const senator = request.body;
   for (let requiredParameter of ['senator_name', 'party', 'state_id']) {
     if (!senator[requiredParameter]) {
@@ -88,12 +88,50 @@ app.post('/api/v1/senators', (request, response)=>{
     }
   }
   database('senators').insert(senator, 'id')
-  .then(senator=>{
-    response.status(201).json({id: senator[0]})
+    .then(senator => {
+      response.status(201).json({id: senator[0]})
+    })
+    .catch(err => {
+      response.status(500).json({err})
   })
-  .catch(err=>{
-    response.status(500).json({err})
-  })
+})
+
+app.patch('/api/v1/states/:id', (request, response) => {
+  const id = request.params.id;
+  const updates = request.body;
+
+  if (updates.hasOwnProperty('id')) {
+    return response.status(422).json({error: 'You cannot update the id field'})
+  }
+  database('states').where('id', id).update(request.body)
+    .then(state => {
+      return response.status(201).json(updates)
+    })
+    .catch(err => {
+      response.status(500).json({err})
+   })
+})
+
+app.patch('/api/v1/senators/:id', (request, response) => {
+
+})
+
+app.delete('/api/v1/states/:id', (request, response) => {
+  database('states').where('id', request.params.id).del()
+    .then(state => {
+      if(state.length) {
+        return response.status(404).json({ error: `Could not find a state with id ${request.params.id}.`})
+      } else {
+        return response.status(201).json("You deleted a state!!!")
+      }
+    })
+    .catch(err => {
+      response.status(500).json({err})
+    })
+})
+
+app.delete('/api/v1/senators/:id', (request, response) => {
+
 })
 
 
