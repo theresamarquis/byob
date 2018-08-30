@@ -59,6 +59,20 @@ app.get('/api/v1/states/:id', (request, response) => {
     })
 })
 
+app.get('/api/v1/party', (request, response) => {
+  database('senators').where('party', request.query.party).select()
+    .then(senators => {
+      if (senators.length) {
+        response.status(200).json(senators)
+      } else {
+        response.status(404).json({ error: `Could not find ${request.params.party} senators.`} )
+      }
+    })
+    .catch(err => {
+      response.status(500).json({err})
+    })
+})
+
 app.post('/api/v1/states', (request, response) => {
   const state = request.body;
 
