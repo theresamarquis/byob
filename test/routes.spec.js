@@ -40,6 +40,44 @@ describe('API Routes', () => {
         done();
       })
     })
+
+    it('should return a 404 for a route that does not exist', done => {
+      chai.request(server)
+        .get('/sad')
+        .end((err, response) => {
+          response.should.have.status(404);
+        done()
+      })
+    })
+  })
+
+  describe('GET /api/v1/senators', () => {
+    it('should return all senators', done => {
+      chai.request(server)
+      .get('/api/v1/senators')
+      .end((err, response) => {
+        response.should.have.status(200);
+        response.should.be.json;
+        response.body.should.be.a('array');
+        response.body.length.should.equal(100);
+        response.body[97].should.have.property('senator_name');
+        response.body[97].senator_name.should.equal("Tammy Baldwin");
+        response.body[97].should.have.property('party');
+        response.body[97].party.should.equal('D');
+        response.body[97].should.have.property('state_id');
+        response.body[97].state_id.should.equal(49);
+        done();
+      })
+    })
+
+    it('should return a 404 for a route that does not exist', done => {
+      chai.request(server)
+        .get('/sad')
+        .end((err, response) => {
+          response.should.have.status(404);
+        done()
+      })
+    })
   })
 
 
