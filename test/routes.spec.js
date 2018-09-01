@@ -160,6 +160,38 @@ describe('PATCH /api/v1/states/:id', () => {
 
   it('should not update a state if there is an id field in the request', done => {
     chai.request(server)
+    .patch('/api/v1/states/1')
+    .send({
+      id: 2
+    })
+    .end((err, response) => { 
+      response.should.have.status(422);
+      response.should.be.json;
+      response.body.should.be.a('object');
+      response.body.should.have.property('error');
+      response.body.error.should.equal('You cannot update the id field.');  
+      done()
+    })
+  })  
+})
+
+describe('PATCH /api/v1/senators/:id', () => {
+  it('should update a senator', done => {
+    chai.request(server)
+    .patch('/api/v1/senators/1')
+    .send({
+      party: "I"
+    })
+    .end((err, response) => {
+      response.should.have.status(201);
+      response.should.be.json;
+      response.body.should.be.a('object');
+      done()
+    })
+  })
+
+  it('should not update a senator if there is an id field in the request', done => {
+    chai.request(server)
     .patch('/api/v1/senators/1')
     .send({
       id: 2
