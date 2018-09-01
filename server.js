@@ -17,7 +17,7 @@ app.use(express.static('public'));
 
 const checkAuth = (request, response, next) => {
   console.log('howdy');
-  
+
   const { token } = request.headers;
   if (!token) {
     return response.status(403).json({ error: 'You must be authorized to access this endpoint' })
@@ -31,7 +31,7 @@ const checkAuth = (request, response, next) => {
       next();
     }
   } catch (error) {
-    return response.status(403).json({error:'Invlid token'});
+    return response.status(403).json({ error: 'Invlid token' });
   }
 }
 
@@ -134,7 +134,18 @@ app.post('/api/v1/senators', (request, response) => {
     });
 });
 
-app.patch('/api/v1/states/:id', (request, response) => {
+app.post('api/v1/authorize', (request, response) => {
+  const user = request.body;
+  for(let requiredParameter of ['email', 'appName']){
+    if (!user[requiredParameter]) {
+      return response.status(422).json({ error:`Expected format: {email: <STRING>, appName: <STRING> }. You are missing a ${requiredParameter} property.`})
+    }
+  }
+  const token = jwt.sign({user}, app.get('secretKey'));
+  response.status(201).json({ token })
+})
+
+app.patch('/api/v1/states/:id', checkAuth, (request, response) => {
   const id = request.params.id;
   const updates = request.body;
 
