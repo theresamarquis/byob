@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('port', process.env.PORT || 3000);
 app.locals.title = 'byob';
 
+app.use(express.static('public'));
+
 app.get('/api/v1/senators', (request, response) => {
   database('senators').select()
     .then((senators) => {
