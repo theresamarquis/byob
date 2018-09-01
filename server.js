@@ -159,7 +159,7 @@ app.patch('/api/v1/states/:id', checkAuth, (request, response) => {
     });
 });
 
-app.patch('/api/v1/senators/:id', (request, response) => {
+app.patch('/api/v1/senators/:id', checkAuth, (request, response) => {
   const id = request.params.id;
   const updates = request.body;
 
@@ -175,7 +175,7 @@ app.patch('/api/v1/senators/:id', (request, response) => {
     });
 });
 
-app.delete('/api/v1/states/:id', (request, response) => {
+app.delete('/api/v1/states/:id', checkAuth, (request, response) => {
   database('senators').where('state_id', request.params.id).del();
   database('states').where('id', request.params.id).del()
     .then(state => {
@@ -190,7 +190,7 @@ app.delete('/api/v1/states/:id', (request, response) => {
     });
 });
 
-app.delete('/api/v1/senators/:id', (request, response) => {
+app.delete('/api/v1/senators/:id', checkAuth, (request, response) => {
   database('senators').where('id', request.params.id).del()
     .then(senator => {
       if (senator.length) {
