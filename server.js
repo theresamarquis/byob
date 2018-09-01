@@ -143,6 +143,7 @@ app.patch('/api/v1/senators/:id', (request, response) => {
 })
 
 app.delete('/api/v1/states/:id', (request, response) => {
+  database('senators').where('state_id', request.params.id).del()
   database('states').where('id', request.params.id).del()
     .then(state => {
       if (state.length) {
