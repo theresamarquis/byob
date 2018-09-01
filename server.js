@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const jwt = require('jsonwebtoken';)
+const jwt = require('jsonwebtoken');
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
@@ -134,7 +134,7 @@ app.post('/api/v1/senators', (request, response) => {
     });
 });
 
-app.post('api/v1/authorize', (request, response) => {
+app.post('/api/v1/authorize', (request, response) => {
   const user = request.body;
   for(let requiredParameter of ['email', 'appName']){
     if (!user[requiredParameter]) {
@@ -142,7 +142,7 @@ app.post('api/v1/authorize', (request, response) => {
     }
   }
   const token = jwt.sign({user}, app.get('secretKey'));
-  response.status(201).json({ token })
+  response.status(201).json({ token });
 })
 
 app.patch('/api/v1/states/:id', checkAuth, (request, response) => {
