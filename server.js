@@ -11,8 +11,29 @@ require('dotenv').config();
 
 app.set('port', process.env.PORT || 3000);
 app.locals.title = 'byob';
+app.set('secretKey', process.env.secretKey);
 
 app.use(express.static('public'));
+
+const checkAuth = (request, response, next) => {
+  console.log('howdy');
+  
+  const { token } = request.headers;
+  if (!token) {
+    return response.status(403).json({ error: 'You must be authorized to access this endpoint' })
+  }
+  try {
+    const decoded = jwt.verify(token, app.get('secretKey'));
+    const validApps = ['byob'];
+
+    if (validApps.includes(decoded.appInfo.appName)) {
+      request.decoded = decoded;
+      next();
+    }
+  } catch (error) {
+    return response.status(403).json({error:'Invlid token'});
+  }
+}
 
 app.get('/api/v1/senators', (request, response) => {
   database('senators').select()
