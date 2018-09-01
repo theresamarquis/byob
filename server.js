@@ -1,17 +1,39 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+require('dotenv').config();
 
 app.set('port', process.env.PORT || 3000);
 app.locals.title = 'byob';
+app.set('secretKey', process.env.secretKey);
 
 app.use(express.static('public'));
+
+const checkAuth = (request, response, next) => {
+  console.log('howdy');
+
+  const { token } = request.headers;
+  if (!token) {
+    return response.status(403).json({ error: 'You must be authorized to access this endpoint' })
+  }
+  try {
+    const decoded = jwt.verify(token, app.get('secretKey'));
+    const validApps = ['byob'];
+
+    if (validApps.includes(decoded.appInfo.appName)) {
+      request.decoded = decoded;
+      next();
+    }
+  } catch (error) {
+    return response.status(403).json({ error: 'Invlid token' });
+  }
+}
 
 app.get('/api/v1/senators', (request, response) => {
   database('senators').select()
@@ -112,7 +134,18 @@ app.post('/api/v1/senators', (request, response) => {
     });
 });
 
-app.patch('/api/v1/states/:id', (request, response) => {
+app.post('/api/v1/authorize', (request, response) => {
+  const user = request.body;
+  for(let requiredParameter of ['email', 'appName']){
+    if (!user[requiredParameter]) {
+      return response.status(422).json({ error:`Expected format: {email: <STRING>, appName: <STRING> }. You are missing a ${requiredParameter} property.`})
+    }
+  }
+  const token = jwt.sign({user}, app.get('secretKey'));
+  response.status(201).json({ token });
+})
+
+app.patch('/api/v1/states/:id', checkAuth, (request, response) => {
   const id = request.params.id;
   const updates = request.body;
 
