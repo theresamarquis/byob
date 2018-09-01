@@ -16,8 +16,6 @@ app.set('secretKey', process.env.secretKey);
 app.use(express.static('public'));
 
 const checkAuth = (request, response, next) => {
-  console.log('howdy');
-
   const { token } = request.headers;
   if (!token) {
     return response.status(403).json({ error: 'You must be authorized to access this endpoint' })
