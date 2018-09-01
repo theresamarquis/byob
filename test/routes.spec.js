@@ -30,7 +30,7 @@ describe('API Routes', () => {
         response.should.have.status(200);
         response.should.be.json;
         response.body.should.be.a('array');
-        response.body.length.should.equal(50);
+        response.body.length.should.equal(4);
         response.body[0].should.have.property('state_name');
         response.body[0].state_name.should.equal("Alabama");
         response.body[0].should.have.property('capital');
@@ -59,13 +59,13 @@ describe('API Routes', () => {
         response.should.have.status(200);
         response.should.be.json;
         response.body.should.be.a('array');
-        response.body.length.should.equal(100);
-        response.body[97].should.have.property('senator_name');
-        response.body[97].senator_name.should.equal("Tammy Baldwin");
-        response.body[97].should.have.property('party');
-        response.body[97].party.should.equal('D');
-        response.body[97].should.have.property('state_id');
-        response.body[97].state_id.should.equal(49);
+        response.body.length.should.equal(8);
+        response.body[0].should.have.property('senator_name');
+        response.body[0].senator_name.should.equal("Doug Jones");
+        response.body[0].should.have.property('party');
+        response.body[0].party.should.equal('D');
+        response.body[0].should.have.property('state_id');
+        response.body[0].state_id.should.equal(1);
         done();
       })
     })
