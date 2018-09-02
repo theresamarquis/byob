@@ -75,7 +75,8 @@ If you already have Postgres on your computer, you will need to uninstall
 
 ### Sample Responses
 
-##### GET `/api/v1/states`: 
+##### GET `/api/v1/states`:
+
 ```javascript
 [
     {
@@ -99,6 +100,7 @@ If you already have Postgres on your computer, you will need to uninstall
 ```
 
 ##### * GET `/api/v1/senators`
+
 ```javascript
 [
     {
@@ -120,7 +122,9 @@ If you already have Postgres on your computer, you will need to uninstall
     ...
 ]
 ```
+
 ##### GET `/api/v1/states/203`
+
 ```javascript
 [
     {
@@ -135,6 +139,7 @@ If you already have Postgres on your computer, you will need to uninstall
 ```
 
 ##### GET `/api/v1/senators/205`
+
 ```javascript
 [
     {
@@ -149,6 +154,7 @@ If you already have Postgres on your computer, you will need to uninstall
 ```
 
 ##### GET `/api/v1/party?party=R`
+
 ```javascript
 [
     {
@@ -172,7 +178,9 @@ If you already have Postgres on your computer, you will need to uninstall
 ```
 
 ##### POST `/api/v1/states`
+
 Example body (required):
+
 ```javascript
 {
   "state_name": "Guam",
@@ -182,6 +190,7 @@ Example body (required):
 ```
 
 Example response:
+
 ```javascript
 {
     "id": 252
@@ -189,7 +198,9 @@ Example response:
 ```
 
 ##### POST `/api/v1/senators`
+
 Example body (required):
+
 ```javascript
 {
   "senator_name": "Betty Politician",
@@ -199,6 +210,7 @@ Example body (required):
 ```
 
 Example response:
+
 ```javascript
 {
     "id": 302
@@ -206,7 +218,9 @@ Example response:
 ```
 
 ##### PATCH `/api/v1/states/252`
+
 Example body (required):
+
 ```javascript
 {
   "population": 25001
@@ -214,6 +228,7 @@ Example body (required):
 ```
 
 Example response:
+
 ```javascript
 {
   "population": 25001
@@ -221,7 +236,9 @@ Example response:
 ```
 
 ##### PATCH `/api/v1/senators/302`
+
 Example body (required):
+
 ```javascript
 {
   "party": "D"
@@ -229,6 +246,7 @@ Example body (required):
 ```
 
 Example response:
+
 ```javascript
 {
   "party": "D"
@@ -236,11 +254,13 @@ Example response:
 ```
 
 ##### DELETE `/api/v1/states/252`
+
 ```javascript
 You deleted a state!!!
 ```
 
 ##### DELETE `/api/v1/senators/302`
+
 ```javascript
 You deleted a senator!!!
 ```
@@ -259,7 +279,7 @@ Explain what these tests test and why
 * [Postgres](https://www.postgresql.org/) - open source object-relational database system
 * [Node.js](https://nodejs.org/en/) - asynchronous, event-driven, JavaScript runtime
 * [Express](https://expressjs.com/) - web framework for Node.js
-* [npm]() - package management
+* [npm](https://www.npmjs.com/) - package management
 
 
 ## Authors
