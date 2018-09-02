@@ -189,7 +189,7 @@ describe('API Routes', () => {
         .end((error, response) => {
           response.should.have.status(201);
           response.should.be.json;
-          response.body.should.be.a('object');
+          response.body.should.be.a('string');
           done();
         });
     });
@@ -232,7 +232,7 @@ describe('API Routes', () => {
         .end((error, response) => {
           response.should.have.status(201);
           response.should.be.json;
-          response.body.should.be.a('object');
+          response.body.should.be.a('string');
           done();
         });
     });
