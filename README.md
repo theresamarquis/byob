@@ -2,7 +2,16 @@
 
 Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  This repository will serve as a backend allowing you to build your own postgres databases. 
 
-## Project Setup
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+
+### Prerequisites
+
+
+
+### Installing
 
 * Clone down this repo.
 * Run `npm install`
@@ -10,15 +19,15 @@ Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  Th
 * Run `npm start`
 * Visit localhost:3000
 
-## Setup Postgres
+### Setup Postgres
 
-### If you already have Postgres on your computer, you will need to uninstall
+If you already have Postgres on your computer, you will need to uninstall
 
-![Click here for more information](https://postgresapp.com/documentation/remove.html)
+[Click here for more information.](https://postgresapp.com/documentation/remove.html)
 
 ### Installation 
 
-![Get the Postgres app here](https://postgresapp.com/)
+[Get the Postgres app here.](https://postgresapp.com/)
 
 ### Create Your Database
 
@@ -33,7 +42,7 @@ Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  Th
 * Create migration with `knex migrate:make initial` to make a timestamped migrations directory
 
 
-## Available Endpoints
+## Available Endpoints and Example Responses
 
 * GET `/api/v1/states`
 * GET `/api/v1/senators`
@@ -67,7 +76,8 @@ Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  Th
 ### Sample Responses
 
 ##### GET `/api/v1/states`: 
-`[
+```javascript
+[
     {
         "id": 201,
         "state_name": "Alabama",
@@ -85,10 +95,12 @@ Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  Th
         "updated_at": "2018-08-29T23:22:25.354Z"
     },
     ...
-]`
+]
+```
 
 ##### * GET `/api/v1/senators`
-`[
+```javascript
+[
     {
         "id": 201,
         "senator_name": "Doug Jones",
@@ -107,9 +119,10 @@ Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  Th
     },
     ...
 ]
-`
+```
 ##### GET `/api/v1/states/203`
-`[
+```javascript
+[
     {
         "id": 203,
         "state_name": "Arkansas",
@@ -118,10 +131,12 @@ Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  Th
         "created_at": "2018-08-29T23:22:25.356Z",
         "updated_at": "2018-08-29T23:22:25.356Z"
     }
-]`
+]
+```
 
 ##### GET `/api/v1/senators/205`
-`[
+```javascript
+[
     {
         "id": 205,
         "senator_name": "John McCain",
@@ -130,10 +145,12 @@ Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  Th
         "created_at": "2018-08-29T23:22:25.387Z",
         "updated_at": "2018-08-29T23:22:25.387Z"
     }
-]`
+]
+```
 
 ##### GET `/api/v1/party?party=R`
-`[
+```javascript
+[
     {
         "id": 233,
         "senator_name": "Mitch McConnell",
@@ -151,59 +168,102 @@ Build Your Own Backend used Postgres, Knex, Node.js, and vanilla JavaScript.  Th
         "updated_at": "2018-08-29T23:22:25.411Z"
     },
     ...
-]`
+]
+```
 
 ##### POST `/api/v1/states`
 Example body (required):
-`{
+```javascript
+{
   "state_name": "Guam",
   "population": 25000,
   "capital": "Pago Pago"
-}`
+}
+```
 
 Example response:
-`{
+```javascript
+{
     "id": 252
-}`
+}
+```
 
 ##### POST `/api/v1/senators`
 Example body (required):
-`{
+```javascript
+{
   "senator_name": "Betty Politician",
   "party": "I",
   "state_id": 252
-}`
+}
+```
 
 Example response:
-`{
+```javascript
+{
     "id": 302
-}`
+}
+```
 
 ##### PATCH `/api/v1/states/252`
 Example body (required):
-`{
+```javascript
+{
   "population": 25001
-}`
+}
+```
 
 Example response:
-`{
+```javascript
+{
   "population": 25001
-}`
+}
+```
 
 ##### PATCH `/api/v1/senators/302`
 Example body (required):
-`{
+```javascript
+{
   "party": "D"
-}`
+}
+```
 
 Example response:
-`{
+```javascript
+{
   "party": "D"
-}`
+}
+```
 
 ##### DELETE `/api/v1/states/252`
-`You deleted a state!!!`
+```javascript
+You deleted a state!!!
+```
 
 ##### DELETE `/api/v1/senators/302`
-`You deleted a senator!!!`
+```javascript
+You deleted a senator!!!
+```
 
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+
+## Built With
+
+* [Postgres](https://www.postgresql.org/) - open source object-relational database system
+* [Node.js](https://nodejs.org/en/) - asynchronous, event-driven, JavaScript runtime
+* [Express](https://expressjs.com/) - web framework for Node.js
+* [npm]() - package management
+
+
+## Authors
+
+* **Marika Ross** - *Initial work* - [Marika on Github](https://github.com/marikaross)
+
+* **Theresa Marquis** - *Initial work* - [Theresa on Github](https://github.com/tmcjunkinmarquis)
