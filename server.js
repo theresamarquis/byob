@@ -24,12 +24,12 @@ const checkAuth = (request, response, next) => {
     const decoded = jwt.verify(token, app.get('secretKey'));
     const validApps = ['byob'];
 
-    if (validApps.includes(decoded.appInfo.appName)) {
+    if (validApps.includes(decoded.user.appName)) {
       request.decoded = decoded;
       next();
     }
   } catch (error) {
-    return response.status(403).json({ error: 'Invlid token' });
+    return response.status(403).json({ error: 'Invalid token' });
   }
 }
 
@@ -139,7 +139,7 @@ app.post('/api/v1/authorize', (request, response) => {
       return response.status(422).json({ error:`Expected format: {email: <STRING>, appName: <STRING> }. You are missing a ${requiredParameter} property.`})
     }
   }
-  const token = jwt.sign({user}, app.get('secretKey'));
+  const token = jwt.sign({user}, app.get('secretKey'), {expiresIn: '1000d'});
   response.status(201).json({ token });
 })
 
@@ -176,8 +176,8 @@ app.patch('/api/v1/senators/:id', checkAuth, (request, response) => {
 });
 
 app.delete('/api/v1/states/:id', checkAuth, (request, response) => {
-  database('senators').where('state_id', request.params.id).del();
-  database('states').where('id', request.params.id).del()
+  database('senators').where('state_id', request.params.id).del()
+    .then(() => database('states').where('id', request.params.id).del())
     .then(state => {
       if (state.length) {
         return response.status(404).json({ error: `Could not find a state with id ${request.params.id}.` });
