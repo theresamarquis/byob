@@ -76,7 +76,7 @@ If you already have Postgres on your computer, you will need to uninstall
 ### Sample Responses
 
 ##### GET `/api/v1/states`: 
-```javascript
+```json
 [
     {
         "id": 201,
