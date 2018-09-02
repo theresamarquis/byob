@@ -18,7 +18,7 @@ app.use(express.static('public'));
 const checkAuth = (request, response, next) => {
   const { token } = request.headers;
   if (!token) {
-    return response.status(403).json({ error: 'You must be authorized to access this endpoint' })
+    return response.status(403).json({ error: 'You must be authorized to access this endpoint' });
   }
   try {
     const decoded = jwt.verify(token, app.get('secretKey'));
@@ -31,7 +31,7 @@ const checkAuth = (request, response, next) => {
   } catch (error) {
     return response.status(403).json({ error: 'Invalid token' });
   }
-}
+};
 
 app.get('/api/v1/senators', (request, response) => {
   database('senators').select()
@@ -134,14 +134,16 @@ app.post('/api/v1/senators', (request, response) => {
 
 app.post('/api/v1/authorize', (request, response) => {
   const user = request.body;
-  for(let requiredParameter of ['email', 'appName']){
+  for (let requiredParameter of ['email', 'appName']) {
     if (!user[requiredParameter]) {
-      return response.status(422).json({ error:`Expected format: {email: <STRING>, appName: <STRING> }. You are missing a ${requiredParameter} property.`})
+      return response.status(422).json(
+        {error: `Expected format: {email: <STRING>, appName: <STRING> }. You are missing a ${requiredParameter} property.`}
+      );
     }
   }
-  const token = jwt.sign({user}, app.get('secretKey'), {expiresIn: '1000d'});
+  const token = jwt.sign({ user }, app.get('secretKey'), { expiresIn: '1000d' });
   response.status(201).json({ token });
-})
+});
 
 app.patch('/api/v1/states/:id', checkAuth, (request, response) => {
   const id = request.params.id;
@@ -151,7 +153,7 @@ app.patch('/api/v1/states/:id', checkAuth, (request, response) => {
     return response.status(422).json({ error: 'You cannot update the id field.' });
   }
   database('states').where('id', id).update(request.body)
-    .then(state => {
+    .then(() => {
       return response.status(201).json(updates);
     })
     .catch(error => {
@@ -167,7 +169,7 @@ app.patch('/api/v1/senators/:id', checkAuth, (request, response) => {
     return response.status(422).json({ error: 'You cannot update the id field.' });
   }
   database('senators').where('id', id).update(request.body)
-    .then(senator => {
+    .then(() => {
       return response.status(201).json(updates);
     })
     .catch(error => {

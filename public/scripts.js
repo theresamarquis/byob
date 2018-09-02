@@ -1,4 +1,4 @@
-const submitHandler = document.querySelector('.button')
+const submitHandler = document.querySelector('.button');
 
 const getJwt = (event) => {
   event.preventDefault();

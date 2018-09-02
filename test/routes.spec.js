@@ -6,19 +6,17 @@ const chaiHttp = require('chai-http');
 const server = require('../server');
 const knex = require('../db/knex');
 const token = process.env.testToken;
-// const token = process.env.secretKey;
-
 
 chai.use(chaiHttp);
 
 describe('API Routes', () => {
-  beforeEach( done => {
+  beforeEach(done => {
     knex.migrate.rollback()
       .then(() => {
         knex.migrate.latest()
           .then(() => {
             return knex.seed.run()
-              .then(() =>{
+              .then(() => {
                 done();
               });
           });
@@ -113,7 +111,6 @@ describe('API Routes', () => {
     });
   });
 
-
   describe('GET /api/v1/states/:id', () => {
     it('should return a single state', done => {
       chai.request(server)
@@ -134,7 +131,7 @@ describe('API Routes', () => {
           done();
         });
     });
-  
+
     it('should return a 404 for a route that does not exist', done => {
       chai.request(server)
         .get('/sad')
@@ -145,22 +142,21 @@ describe('API Routes', () => {
     });
   });
 
-describe('POST /api/v1/authorize', () => {
+  describe('POST /api/v1/authorize', () => {
     it('should give a web token if the input is right', done => {
 
-    chai.request(server)
-      .post('/api/v1/authorize')
-      .send({
-        email: "jim@turing.io",
-        appName: "byob"
-      })
-      .end(function (error, response) {
-        response.should.have.status(201)
-        done();
-      })
-
-})
-  })
+      chai.request(server)
+        .post('/api/v1/authorize')
+        .send({
+          email: "jim@turing.io",
+          appName: "byob"
+        })
+        .end(function (error, response) {
+          response.should.have.status(201);
+          done();
+        });
+    });
+  });
 
   describe('POST /api/v1/states', function () {
     it('should add a state', function (done) {
@@ -181,7 +177,6 @@ describe('POST /api/v1/authorize', () => {
         });
     });
   });
-
 
   describe('PATCH /api/v1/states/:id', () => {
     it('should update a state', done => {
@@ -206,15 +201,15 @@ describe('POST /api/v1/authorize', () => {
         .send({
           id: 2
         })
-        .end((error, response) => { 
+        .end((error, response) => {
           response.should.have.status(422);
           response.should.be.json;
           response.body.should.be.a('object');
           response.body.should.have.property('error');
-          response.body.error.should.equal('You cannot update the id field.');  
+          response.body.error.should.equal('You cannot update the id field.');
           done();
         });
-    }); 
+    });
 
     it('should return a 404 for a route that does not exist', done => {
       chai.request(server)
@@ -223,7 +218,7 @@ describe('POST /api/v1/authorize', () => {
           response.should.have.status(404);
           done();
         });
-    }); 
+    });
   });
 
   describe('PATCH /api/v1/senators/:id', () => {
@@ -249,12 +244,12 @@ describe('POST /api/v1/authorize', () => {
         .send({
           id: 2
         })
-        .end((error, response) => { 
+        .end((error, response) => {
           response.should.have.status(422);
           response.should.be.json;
           response.body.should.be.a('object');
           response.body.should.have.property('error');
-          response.body.error.should.equal('You cannot update the id field.');  
+          response.body.error.should.equal('You cannot update the id field.');
           done();
         });
     });
@@ -266,7 +261,7 @@ describe('POST /api/v1/authorize', () => {
           response.should.have.status(404);
           done();
         });
-    }); 
+    });
   });
 
   describe('DELETE /api/v1/senators/:id', () => {
@@ -348,6 +343,4 @@ describe('POST /api/v1/authorize', () => {
         });
     });
   });
-
-
 });
