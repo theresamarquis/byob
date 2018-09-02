@@ -145,6 +145,23 @@ describe('API Routes', () => {
     });
   });
 
+describe('POST /api/v1/authorize', () => {
+    it('should give a web token if the input is right', done => {
+
+    chai.request(server)
+      .post('/api/v1/authorize')
+      .send({
+        email: "jim@turing.io",
+        appName: "byob"
+      })
+      .end(function (error, response) {
+        response.should.have.status(201)
+        done();
+      })
+
+})
+  })
+
   describe('POST /api/v1/states', function () {
     it('should add a state', function (done) {
       chai.request(server)
