@@ -154,7 +154,7 @@ app.patch('/api/v1/states/:id', checkAuth, (request, response) => {
   }
   database('states').where('id', id).update(request.body)
     .then(() => {
-      return response.status(201).json(updates);
+      return response.status(201).json(`You changed info for state ${ request.params.id }`);
     })
     .catch(error => {
       response.status(500).json({ error });
@@ -170,7 +170,7 @@ app.patch('/api/v1/senators/:id', checkAuth, (request, response) => {
   }
   database('senators').where('id', id).update(request.body)
     .then(() => {
-      return response.status(201).json(updates);
+      return response.status(201).json(`You changed info for senator ${request.params.id}`);
     })
     .catch(error => {
       response.status(500).json({ error });
